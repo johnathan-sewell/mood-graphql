@@ -5,16 +5,29 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "serverless deploy --aws-profile mood"
+    "deploy": "serverless deploy --aws-profile mood",
+    "deploy-function": "serverless deploy function -f query --aws-profile mood",
+    "dev": "AWS_PROFILE=mood serverless offline start"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "aws-sdk": "^2.348.0",
-    "graphql": "^14.0.2"
+    "aws-sdk": "^2.351.0",
+    "graphql": "^14.0.2",
+    "lodash": "^4.17.11"
   },
   "devDependencies": {
-    "cz-conventional-changelog": "^2.1.0"
+    "cz-conventional-changelog": "^2.1.0",
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-react": "^7.11.1",
+    "prettier": "1.15.3",
+    "serverless-offline": "^3.31.3"
   },
   "config": {
     "commitizen": {

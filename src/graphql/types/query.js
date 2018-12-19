@@ -13,11 +13,7 @@ const query = new GraphQLObjectType({
           type: new GraphQLNonNull(GraphQLString)
         }
       },
-      // GraphQL library can also use Promises as resolvers
-      resolve: (parent, args) => {
-        const moods = getMoods(args.email);
-        return moods;
-      }
+      resolve: (parent, args) => getMoods(args.email)
     }
   }
 });

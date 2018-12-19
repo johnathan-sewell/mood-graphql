@@ -21,25 +21,7 @@ const mutation = new GraphQLObjectType({
         }
       },
       type: mood,
-      resolve: (parent, args) => {
-        console.log('addMood', parent, args);
-        const added = createMood(args);
-        console.log('added', added);
-        return added;
-      }
-    },
-    ping: {
-      args: {
-        name: {
-          name: 'pingName',
-          type: new GraphQLNonNull(GraphQLString)
-        }
-      },
-      type: new GraphQLNonNull(GraphQLString),
-      resolve: (parent, args) => {
-        console.log('ping', parent, args);
-        return 'pong';
-      }
+      resolve: (parent, args) => createMood(args)
     }
   }
 });
